@@ -29,6 +29,7 @@ header {
   justify-content: space-between;
 
   height: 100px;
+  width: 100%;
   background-color: #E7E7E7;
 
   & > * {
@@ -83,17 +84,17 @@ header {
   'how portfolio portfolio weAreFast'
   'needMpv needMpv fixedPrice .';
   grid-auto-rows: minmax(450px, auto);
+  grid-auto-columns: minmax(300px, auto);
   grid-gap: 50px;
 
-  div {
+  & > div {
     background-color: #F1F1F1;
-    position: relative;
     padding: 50px;
 
-    & > * {
-      position: absolute;
-      bottom: 10%;
-      width: 60%;
+    &:not(.portfolio) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
   }
 }
@@ -102,11 +103,69 @@ header {
   font-family: Gilroy SemiBold;
   font-size: 30px;
   line-height: 1.5;
+  margin-bottom: 3%;
+  cursor: pointer;
+}
+
+.portfolio_header {
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    height: 30px;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.portfolio_items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 50px;
+
+  img {
+    float: left;
+    cursor: pointer;
+  }
+}
+
+.project_descr {
+  float: left;
+  margin-left: 10%;
+  margin-top: 1%;
+  line-height: 2;
+
+  span {
+    display: block;
+    cursor: pointer;
+  }
+
+  .project_name {
+    font:  18px "Gilroy SemiBold";
+  }
+
+  .read_more {
+    font:  14px "Gilroy SemiBold";
+    margin-top: 20%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 3px 0 3px 12px;
+  }
+}
+
+.slider_switcher {
+  width: 17%;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer {
   height: 100px;
-  background-color: #F1F1F1;
+  width: 100%;
+  background-color: #E7E7E7;
+  position: sticky;
+  bottom: 0;
 }
 
 nav {
