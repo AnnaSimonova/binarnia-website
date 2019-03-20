@@ -209,28 +209,28 @@ nav a {
 }
 
 .nav-item-1::before {
-  content: url("./images/nav_icons/1.svg");
+  content: url("../images/nav_icons/1.svg");
   position: absolute;
   left: -60%;
   bottom: -3px;
 }
 
 .nav-item-2::before {
-  content: url("./images/nav_icons/2.svg");
+  content: url("../images/nav_icons/2.svg");
   position: absolute;
   left: -60%;
   bottom: -3px;
 }
 
 .nav-item-3::before {
-  content: url("./images/nav_icons/3.svg");
+  content: url("../images/nav_icons/3.svg");
   position: absolute;
   left: -60%;
   bottom: -3px;
 }
 
 .nav-item-4::before {
-  content: url("./images/nav_icons/4.svg");
+  content: url("../images/nav_icons/4.svg");
   position: absolute;
   left: -60%;
   bottom: -3px;

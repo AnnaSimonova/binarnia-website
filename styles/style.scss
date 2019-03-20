@@ -248,7 +248,7 @@ nav {
 $class-slug: nav-item;
 @for $i from 1 through 4 {
   .#{$class-slug}-#{$i}::before {
-    content: url("./images/nav_icons/#{$i}.svg");
+    content: url("../images/nav_icons/#{$i}.svg");
     position: absolute;
     left: -60%;
     bottom: -3px;
