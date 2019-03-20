@@ -1,18 +1,22 @@
 @font-face {
   font-family: Gilroy Reg;
-  src: url("./fonts/gilroy/Gilroy-Regular.ttf");
+  src: url("../fonts/gilroy/Gilroy-Regular.ttf");
 }
 @font-face {
   font-family: Gilroy SemiBold;
-  src: url("./fonts/gilroy/Gilroy-SemiBold.ttf");
+  src: url("../fonts/gilroy/Gilroy-SemiBold.ttf");
 }
 @font-face {
   font-family: Gilroy Bold;
-  src: url("./fonts/gilroy/Gilroy-Bold.ttf");
+  src: url("../fonts/gilroy/Gilroy-Bold.ttf");
 }
 .flex-pattern, .slider_switcher, .portfolio_header, header, nav {
   display: flex;
   justify-content: space-between;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -21,7 +25,8 @@ html {
 }
 
 body {
-  margin: 0;
+  width: 1920px;
+  margin: 0 auto;
   font-family: Gilroy Reg, sans-serif;
   color: #203649;
 }
@@ -43,57 +48,65 @@ header > *, nav > * {
   margin-left: 25px;
 }
 
-.who_we_are {
-  grid-area: whoWeAre;
-}
-
-.can {
-  grid-area: can;
-}
-
-.cannot {
-  grid-area: cannot;
-}
-
-.how {
-  grid-area: how;
-}
-
-.portfolio {
-  grid-area: portfolio;
-}
-
-.need_mpv {
-  grid-area: weAreFast;
-}
-
-.need_mpv {
-  grid-area: needMpv;
-}
-
-.fixed_price {
-  grid-area: fixedPrice;
-}
-
-.grid-wrapper {
+main {
   margin: 50px;
   display: grid;
-  grid-template-areas: "whoWeAre whoWeAre can cannot" "how portfolio portfolio weAreFast" "needMpv needMpv fixedPrice .";
   grid-auto-rows: minmax(450px, auto);
-  grid-auto-columns: minmax(300px, auto);
-  grid-gap: 50px;
+  grid-auto-columns: 23%;
+  grid-row-gap: 50px;
+  justify-content: space-between;
 }
-.grid-wrapper > div {
+main > div {
   padding: 50px;
   background-color: #F1F1F1;
 }
-.grid-wrapper > div:not(.portfolio) {
+main > div:not(.portfolio) {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.block_title, .popup-title {
+.who_we_are {
+  grid-column: 1/span 2;
+  grid-row: 1;
+}
+
+.can {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.cannot {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.how {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.portfolio {
+  grid-column: 2/span 2;
+  grid-row: 2;
+}
+
+.fast {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.need_mpv {
+  grid-column: 1/span 2;
+  grid-row: 3;
+}
+
+.fixed_price {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.block_title {
   margin-bottom: 3%;
   line-height: 1.5;
   font-family: Gilroy SemiBold, sans-serif;

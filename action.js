@@ -4,7 +4,7 @@ const bodyBlock = document.querySelector('body');
 const headerBlock = document.querySelector('header');
 const mainBlock = document.querySelector('main');
 const footerBlock = document.querySelector('footer');
-const gridBlocks = document.querySelectorAll('.grid-wrapper div');
+const gridBlocks = document.querySelectorAll('main div');
 
 document.body.onload = function() {
     popupBlockDescription();

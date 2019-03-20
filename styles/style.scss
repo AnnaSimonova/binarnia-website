@@ -1,16 +1,16 @@
 @font-face {
   font-family: Gilroy Reg;
-  src: url("./fonts/gilroy/Gilroy-Regular.ttf");
+  src: url("../fonts/gilroy/Gilroy-Regular.ttf");
 }
 
 @font-face {
   font-family: Gilroy SemiBold;
-  src: url("./fonts/gilroy/Gilroy-SemiBold.ttf");
+  src: url("../fonts/gilroy/Gilroy-SemiBold.ttf");
 }
 
 @font-face {
   font-family: Gilroy Bold;
-  src: url("./fonts/gilroy/Gilroy-Bold.ttf");
+  src: url("../fonts/gilroy/Gilroy-Bold.ttf");
 }
 
 $gap-size: 50px;
@@ -29,13 +29,18 @@ $colors: (
   @return map_get($colors, $color-name);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 100%;
   width: 100%;
 }
 
 body {
-  margin: 0;
+  width: 1920px;
+  margin: 0 auto;
   font-family: Gilroy Reg, sans-serif;
   color: color(text);
 }
@@ -61,47 +66,13 @@ header > * {
 }
 
 // Main
-.who_we_are {
-  grid-area: whoWeAre;
-}
-
-.can {
-  grid-area: can;
-}
-
-.cannot {
-  grid-area: cannot;
-}
-
-.how {
-  grid-area: how;
-}
-
-.portfolio {
-  grid-area: portfolio;
-}
-
-.need_mpv {
-  grid-area: weAreFast;
-}
-
-.need_mpv {
-  grid-area: needMpv;
-}
-
-.fixed_price {
-  grid-area: fixedPrice;
-}
-
-.grid-wrapper {
+main {
   margin: $gap-size;
   display: grid;
-  grid-template-areas: 'whoWeAre whoWeAre can cannot'
-  'how portfolio portfolio weAreFast'
-  'needMpv needMpv fixedPrice .';
   grid-auto-rows: minmax(450px, auto);
-  grid-auto-columns: minmax(300px, auto);
-  grid-gap: $gap-size;
+  grid-auto-columns: 23%;
+  grid-row-gap: $gap-size;
+  justify-content: space-between;
 
   & > div {
     padding: $gap-size;
@@ -113,6 +84,46 @@ header > * {
       justify-content: flex-end;
     }
   }
+}
+
+.who_we_are {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.can {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.cannot {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.how {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.portfolio {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+}
+
+.fast {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.need_mpv {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+
+.fixed_price {
+  grid-column: 3;
+  grid-row: 3;
 }
 
 .block_title {
@@ -137,9 +148,9 @@ header > * {
   border-radius: 10px;
 }
 
-.popup-title {
-  @extend .block_title;
-}
+//.popup-title {
+//  @extend .block_title;
+//}
 
 .popup-close-btn {
   float: right;

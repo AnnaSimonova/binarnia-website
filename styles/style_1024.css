@@ -1,0 +1,45 @@
+main {
+  grid-auto-columns: 17%;
+}
+
+.who_we_are {
+  grid-column: 1/span 3;
+  grid-row: 1;
+}
+
+.can {
+  grid-column: 4/span 2;
+  grid-row: 1;
+}
+
+.cannot {
+  grid-column: 1/span 2;
+  grid-row: 2;
+}
+
+.how {
+  grid-column: 3/span 3;
+  grid-row: 2;
+}
+
+.portfolio {
+  grid-column: 1/span 3;
+  grid-row: 3;
+}
+
+.fast {
+  grid-column: 4/span 2;
+  grid-row: 3;
+}
+
+.need_mpv {
+  grid-column: 1/span 2;
+  grid-row: 4;
+}
+
+.fixed_price {
+  grid-column: 3/span 3;
+  grid-row: 4;
+}
+
+/*# sourceMappingURL=style_1024.css.map */

@@ -1,0 +1,47 @@
+main {
+  grid-auto-columns: 46%;
+}
+
+.block_title {
+  font-size: 24px;
+}
+
+.who_we_are {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.can {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.cannot {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.how {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.portfolio {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.fast {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.need_mpv {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.fixed_price {
+  grid-column: 2;
+  grid-row: 4;
+}

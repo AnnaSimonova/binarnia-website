@@ -1,0 +1,57 @@
+main {
+  grid-auto-columns: 95%;
+}
+
+.resources_links {
+  display: none;
+}
+
+.block_title {
+  font-size: 24px;
+}
+
+.block_title {
+  font-size: 24px;
+}
+
+.who_we_are {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.can {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.cannot {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.how {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.portfolio {
+  grid-column: 1;
+  grid-row: 5;
+}
+
+.fast {
+  grid-column: 1;
+  grid-row: 6;
+}
+
+.need_mpv {
+  grid-column: 1;
+  grid-row: 7;
+}
+
+.fixed_price {
+  grid-column: 1;
+  grid-row: 8;
+}
+
+/*# sourceMappingURL=style_375.css.map */
