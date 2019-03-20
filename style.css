@@ -10,6 +10,11 @@
   font-family: Gilroy Bold;
   src: url("./fonts/gilroy/Gilroy-Bold.ttf");
 }
+.flex-pattern, .slider_switcher, .portfolio_header, header, nav {
+  display: flex;
+  justify-content: space-between;
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -17,18 +22,17 @@ html {
 
 body {
   margin: 0;
-  font-family: Gilroy Reg;
+  font-family: Gilroy Reg, sans-serif;
   color: #203649;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
+header, nav {
   height: 100px;
   width: 100%;
   background-color: #E7E7E7;
 }
-header > * {
+
+header > *, nav > * {
   margin: auto 50px;
 }
 
@@ -80,8 +84,8 @@ header > * {
   grid-gap: 50px;
 }
 .grid-wrapper > div {
-  background-color: #F1F1F1;
   padding: 50px;
+  background-color: #F1F1F1;
 }
 .grid-wrapper > div:not(.portfolio) {
   display: flex;
@@ -89,18 +93,46 @@ header > * {
   justify-content: flex-end;
 }
 
-.block_title {
-  font-family: Gilroy SemiBold;
-  font-size: 30px;
-  line-height: 1.5;
+.block_title, .popup-title {
   margin-bottom: 3%;
+  line-height: 1.5;
+  font-family: Gilroy SemiBold, sans-serif;
+  font-size: 30px;
   cursor: pointer;
+}
+
+.pop-up {
+  width: 55%;
+  position: absolute;
+  top: 125px;
+  left: 20%;
+  min-height: 80vh;
+  padding: 50px;
+  background-color: white;
+  border: solid 2px #E7E7E7;
+  border-radius: 10px;
+}
+
+.popup-close-btn {
+  float: right;
+  cursor: pointer;
+}
+
+.hr {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.blurred {
+  filter: blur(3px);
+}
+
+.hidden {
+  display: none;
 }
 
 .portfolio_header {
   padding-bottom: 50px;
-  display: flex;
-  justify-content: space-between;
 }
 .portfolio_header img {
   height: 30px;
@@ -132,41 +164,35 @@ header > * {
   font: 18px "Gilroy SemiBold";
 }
 .project_descr .read_more {
-  font: 14px "Gilroy SemiBold";
   margin-top: 20%;
+  padding: 3px 0 3px 12px;
   background-color: white;
   border-radius: 20px;
-  padding: 3px 0 3px 12px;
+  font: 14px "Gilroy SemiBold";
 }
 
 .slider_switcher {
   width: 17%;
-  display: flex;
-  justify-content: space-between;
 }
 
 footer {
   height: 100px;
   width: 100%;
-  background-color: #E7E7E7;
   position: sticky;
   bottom: 0;
 }
 
 nav {
-  width: 100%;
-  height: 100%;
-  display: flex;
   justify-content: space-around;
 }
 nav a {
-  text-decoration: none;
-  color: #203649;
-  font-family: "Gilroy Reg";
-  font-size: 18px;
   margin: auto;
   padding-bottom: 5px;
   position: relative;
+  font-family: Gilroy Reg, sans-serif;
+  font-size: 18px;
+  color: #203649;
+  text-decoration: none;
 }
 
 .nav-item-1::before {
