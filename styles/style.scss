@@ -39,8 +39,8 @@ html {
 }
 
 body {
-  width: 1920px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   font-family: Gilroy Reg, sans-serif;
   color: color(text);
 }
@@ -50,11 +50,6 @@ header {
   height: $gap-size * 2;
   width: 100%;
   background-color: color(bg-dark);
-  @extend .flex-pattern;
-}
-
-header > * {
-  margin: auto $gap-size;
 }
 
 .resources_links {
@@ -65,9 +60,21 @@ header > * {
   }
 }
 
+.content-wrapper {
+  @extend .flex-pattern;
+  height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  & > * {
+    margin: auto $gap-size;
+  }
+}
+
 // Main
 main {
-  margin: $gap-size;
+  max-width: 1820px;
+  margin: $gap-size auto;
   display: grid;
   grid-auto-rows: minmax(450px, auto);
   grid-auto-columns: 23%;
@@ -224,14 +231,16 @@ main {
 
 // Footer
 footer {
-  height: $gap-size * 2;
-  width: 100%;
+  @extend header;
   position: sticky;
   bottom: 0;
 }
 
 nav {
-  @extend header;
+  @extend .flex-pattern;
+  height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   justify-content: space-around;
 
   a {

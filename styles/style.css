@@ -10,7 +10,7 @@
   font-family: Gilroy Bold;
   src: url("../fonts/gilroy/Gilroy-Bold.ttf");
 }
-.flex-pattern, .slider_switcher, .portfolio_header, header, nav {
+.flex-pattern, nav, .slider_switcher, .portfolio_header, .content-wrapper {
   display: flex;
   justify-content: space-between;
 }
@@ -25,20 +25,16 @@ html {
 }
 
 body {
-  width: 1920px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   font-family: Gilroy Reg, sans-serif;
   color: #203649;
 }
 
-header, nav {
+header, footer {
   height: 100px;
   width: 100%;
   background-color: #E7E7E7;
-}
-
-header > *, nav > * {
-  margin: auto 50px;
 }
 
 .resources_links {
@@ -48,8 +44,18 @@ header > *, nav > * {
   margin-left: 25px;
 }
 
+.content-wrapper {
+  height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.content-wrapper > * {
+  margin: auto 50px;
+}
+
 main {
-  margin: 50px;
+  max-width: 1820px;
+  margin: 50px auto;
   display: grid;
   grid-auto-rows: minmax(450px, auto);
   grid-auto-columns: 23%;
@@ -189,13 +195,14 @@ main > div:not(.portfolio) {
 }
 
 footer {
-  height: 100px;
-  width: 100%;
   position: sticky;
   bottom: 0;
 }
 
 nav {
+  height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   justify-content: space-around;
 }
 nav a {
