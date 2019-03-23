@@ -1,3 +1,7 @@
 main {
   margin: 50px;
 }
+
+.portfolio_items {
+  grid-template-columns: 1fr 1fr;
+}

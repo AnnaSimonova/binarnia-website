@@ -2,4 +2,8 @@ main {
   margin: 50px;
 }
 
+.portfolio_items {
+  grid-template-columns: 1fr 1fr;
+}
+
 /*# sourceMappingURL=style_1366.css.map */

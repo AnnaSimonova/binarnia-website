@@ -2,8 +2,13 @@ main {
   grid-auto-columns: 95%;
 }
 
-.resources_links {
+.resources_links, .main_logo {
   display: none;
+}
+
+.logo_sign {
+  display: block;
+  margin: auto;
 }
 
 .block_title {
@@ -52,4 +57,12 @@ main {
 .fixed_price {
   grid-column: 1;
   grid-row: 8;
+}
+
+nav {
+  margin: 0 50px;
+
+  a {
+    font-size: 16px;
+  }
 }

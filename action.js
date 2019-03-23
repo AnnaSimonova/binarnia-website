@@ -1,17 +1,15 @@
 "use strict";
 
 const bodyBlock = document.querySelector('body');
-const headerBlock = document.querySelector('header');
-const mainBlock = document.querySelector('main');
-const footerBlock = document.querySelector('footer');
-const gridBlocks = document.querySelectorAll('main div');
+const mainContainer = document.querySelector('.main_container');
+const gridBlocks = document.querySelectorAll('main > div');
+const overlay = document.querySelector('.overlay');
 
 document.body.onload = function() {
     popupBlockDescription();
 };
 
 function popupBlockDescription() {
-    let popupHeight = mainBlock.clientHeight + footerBlock.clientHeight * 0.75;
     gridBlocks.forEach(function(item) {
         item.addEventListener('click', function() {
             let blockTitle = item.querySelector('.block_title').innerHTML;
@@ -20,7 +18,6 @@ function popupBlockDescription() {
 
             let modal = document.createElement('div');
             modal.setAttribute('class', 'pop-up');
-            modal.setAttribute('style', 'height:' + popupHeight + 'px');
 
             let closeIcon = document.createElement('img');
             closeIcon.setAttribute('src', './images/close_icon.svg');
@@ -52,17 +49,19 @@ function popupBlockDescription() {
             }
 
             bodyBlock.appendChild(modal);
-            headerBlock.classList.add('blurred');
-            mainBlock.classList.add('blurred');
-            footerBlock.classList.add('blurred');
+            bodyBlock.style.overflow = 'hidden';
+            mainContainer.classList.add('blurred');
+            overlay.classList.remove('hidden');
         });
     });
 }
 
 function hidePopup() {
     let modal = document.querySelector('.pop-up');
-    bodyBlock.removeChild(modal);
-    headerBlock.classList.remove('blurred');
-    mainBlock.classList.remove('blurred');
-    footerBlock.classList.remove('blurred');
+    modal.classList.add('modal_up');
+    setTimeout(function(){ bodyBlock.removeChild(modal);
+        mainContainer.classList.remove('blurred');
+        overlay.classList.add('hidden');
+        bodyBlock.style.overflow = 'auto';
+    }, 100);
 }

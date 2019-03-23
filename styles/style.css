@@ -10,6 +10,10 @@
   font-family: Gilroy Bold;
   src: url("../fonts/gilroy/Gilroy-Bold.ttf");
 }
+@font-face {
+  font-family: Open Sans;
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+}
 .flex-pattern, nav, .slider_switcher, .portfolio_header, .content-wrapper {
   display: flex;
   justify-content: space-between;
@@ -29,6 +33,10 @@ body {
   margin: 0;
   font-family: Gilroy Reg, sans-serif;
   color: #203649;
+}
+
+.main_container {
+  transition: all 0.2s;
 }
 
 header, footer {
@@ -120,19 +128,31 @@ main > div:not(.portfolio) {
   cursor: pointer;
 }
 
+.block_subtitle {
+  font-family: "Open Sans", sans-serif;
+}
+
 .pop-up {
-  width: 55%;
-  position: absolute;
-  top: 125px;
+  width: 60%;
+  position: fixed;
+  z-index: 1;
+  top: 12vh;
   left: 20%;
-  min-height: 80vh;
+  height: 90vh;
   padding: 50px;
+  overflow-y: auto;
   background-color: white;
   border: solid 2px #E7E7E7;
   border-radius: 10px;
+  animation: modalDown 0.2s;
+}
+.pop-up .block_descr {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
 }
 
 .popup-close-btn {
+  margin-left: 10%;
   float: right;
   cursor: pointer;
 }
@@ -146,10 +166,34 @@ main > div:not(.portfolio) {
   filter: blur(3px);
 }
 
-.hidden {
+.hidden, .logo_sign {
   display: none;
 }
 
+.modal_up {
+  animation: modalUp 0.1s;
+}
+
+@keyframes modalDown {
+  0% {
+    top: 10vh;
+    opacity: 0;
+  }
+  100% {
+    top: 12vh;
+    opacity: 1;
+  }
+}
+@keyframes modalUp {
+  0% {
+    top: 12vh;
+    opacity: 1;
+  }
+  100% {
+    top: 10vh;
+    opacity: 0;
+  }
+}
 .portfolio_header {
   padding-bottom: 50px;
 }
@@ -161,23 +205,32 @@ main > div:not(.portfolio) {
 
 .portfolio_items {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  gap: 50px;
 }
 .portfolio_items img {
   float: left;
   cursor: pointer;
 }
 
+[class^=portfolio-item-] {
+  display: flex;
+  justify-content: space-around;
+}
+
 .project_descr {
   float: left;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-top: 1%;
   line-height: 2;
+  font-family: "Open Sans", sans-serif;
 }
 .project_descr span {
   display: block;
   cursor: pointer;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
 }
 .project_descr .project_name {
   font: 18px "Gilroy SemiBold";
@@ -187,11 +240,10 @@ main > div:not(.portfolio) {
   padding: 3px 0 3px 12px;
   background-color: white;
   border-radius: 20px;
-  font: 14px "Gilroy SemiBold";
 }
 
 .slider_switcher {
-  width: 17%;
+  width: 100px;
 }
 
 footer {
@@ -245,6 +297,18 @@ nav a {
 
 .nav-item-1::before {
   left: -40%;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 /*# sourceMappingURL=style.css.map */
