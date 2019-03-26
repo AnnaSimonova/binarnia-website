@@ -4,9 +4,12 @@ const bodyBlock = document.querySelector('body');
 const mainContainer = document.querySelector('.main_container');
 const gridBlocks = document.querySelectorAll('main > div');
 const overlay = document.querySelector('.overlay');
+const cursorDefault = document.querySelector('.cursor_outer');
+const cursorHover = document.querySelector('.cursor_inner');
 
 document.body.onload = function() {
     popupBlockDescription();
+    window.onmousemove = (e) => mouseCoordinates(e);
 };
 
 function popupBlockDescription() {
@@ -64,4 +67,34 @@ function hidePopup() {
         overlay.classList.add('hidden');
         bodyBlock.style.overflow = 'auto';
     }, 100);
+}
+
+
+// Mouse pointer
+function mouseCoordinates(e) {
+    let targetElem = event.target;
+    cursorDefault.style.left = (e.pageX - 25) + 'px';
+    cursorDefault.style.top = (e.pageY - 25) + 'px';
+
+    if (targetElem.classList.contains("cursor_links_hover")) {
+        cursorHover.classList.add("links_hover");
+        cursorDefault.classList.add("is_transparent");
+    } else if (targetElem.classList.contains("cursor_content_hover")) {
+        cursorHover.classList.add("content_hover");
+        cursorDefault.classList.add("content_hover_inner");
+    } else if (targetElem.classList.contains("cursor_nav_hover")) {
+        cursorHover.classList.add("nav_hover");
+        cursorDefault.classList.add("is_transparent");;
+    } else {
+        if (cursorHover.classList.contains("links_hover")) {
+            cursorHover.classList.remove("links_hover");
+        } else if (cursorHover.classList.contains("nav_hover")) {
+            cursorHover.classList.remove("nav_hover");
+        } else {
+            cursorHover.classList.remove("content_hover");
+            cursorDefault.classList.remove("content_hover_inner");
+        }
+        cursorDefault.classList.remove("is_transparent");
+    }
+
 }

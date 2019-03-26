@@ -11,16 +11,16 @@
   src: url("../fonts/gilroy/Gilroy-Bold.ttf");
 }
 @font-face {
-  font-family: Open Sans;
+  font-family: Open Sans Reg;
   src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
 }
-.flex-pattern, nav, .slider_switcher, .portfolio_header, .content-wrapper {
-  display: flex;
-  justify-content: space-between;
+@font-face {
+  font-family: Open Sans SemiBold;
+  src: url("../fonts/Open_Sans/OpenSans-SemiBold.ttf");
 }
-
 * {
   box-sizing: border-box;
+  cursor: none;
 }
 
 html {
@@ -35,8 +35,22 @@ body {
   color: #203649;
 }
 
-.main_container {
-  transition: all 0.2s;
+h2 {
+  font-family: "Gilroy Bold", sans-serif;
+}
+
+h3 {
+  margin: 0;
+  font-family: "Gilroy SemiBold", sans-serif;
+}
+
+p, span, a {
+  font-family: "Open Sans Reg", sans-serif;
+}
+
+.flex-pattern, nav, .slider_switcher, .portfolio_header, .content-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 header, footer {
@@ -70,11 +84,11 @@ main {
   grid-row-gap: 50px;
   justify-content: space-between;
 }
-main > div {
+main > * {
   padding: 50px;
   background-color: #F1F1F1;
 }
-main > div:not(.portfolio) {
+main > *:not(.portfolio) {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -125,11 +139,10 @@ main > div:not(.portfolio) {
   line-height: 1.5;
   font-family: Gilroy SemiBold, sans-serif;
   font-size: 30px;
-  cursor: pointer;
 }
 
 .block_subtitle {
-  font-family: "Open Sans", sans-serif;
+  font-family: Open Sans Reg, sans-serif;
 }
 
 .pop-up {
@@ -148,13 +161,12 @@ main > div:not(.portfolio) {
 }
 .pop-up .block_descr {
   position: relative;
-  font-family: "Open Sans", sans-serif;
+  font-family: Open Sans Reg, sans-serif;
 }
 
 .popup-close-btn {
   margin-left: 10%;
   float: right;
-  cursor: pointer;
 }
 
 .hr {
@@ -200,7 +212,6 @@ main > div:not(.portfolio) {
 .portfolio_header img {
   height: 30px;
   display: block;
-  cursor: pointer;
 }
 
 .portfolio_items {
@@ -211,7 +222,6 @@ main > div:not(.portfolio) {
 }
 .portfolio_items img {
   float: left;
-  cursor: pointer;
 }
 
 [class^=portfolio-item-] {
@@ -223,23 +233,22 @@ main > div:not(.portfolio) {
   float: left;
   margin-left: 5%;
   margin-top: 1%;
-  line-height: 2;
-  font-family: "Open Sans", sans-serif;
+  font-family: Open Sans Reg, sans-serif;
 }
 .project_descr span {
   display: block;
-  cursor: pointer;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: Open Sans Reg, sans-serif;
 }
 .project_descr .project_name {
-  font: 18px "Gilroy SemiBold";
+  font-family: Gilroy SemiBold, sans-serif;
 }
 .project_descr .read_more {
-  margin-top: 20%;
+  margin-top: 40%;
   padding: 3px 0 3px 12px;
   background-color: white;
   border-radius: 20px;
+  font-family: "Open Sans SemiBold", sans-serif;
 }
 
 .slider_switcher {
@@ -261,10 +270,9 @@ nav a {
   margin: auto;
   padding-bottom: 5px;
   position: relative;
-  font-family: Gilroy Reg, sans-serif;
-  font-size: 18px;
-  color: #203649;
+  color: #979797;
   text-decoration: none;
+  font: 18px "Gilroy SemiBold", sans-serif;
 }
 
 .nav-item-1::before {
@@ -305,10 +313,99 @@ nav a {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(216, 216, 216, 0.4);
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.cursor_outer {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 10;
+  height: 50px;
+  width: 50px;
+  pointer-events: none;
+}
+.cursor_outer::before {
+  content: "";
+  background-color: #203649;
+  width: 8px;
+  height: 8px;
+  margin-top: 45%;
+  margin-left: 45%;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.links_hover {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #203649;
+  opacity: 0.4;
+  position: relative;
+  z-index: 11;
+  pointer-events: none;
+  animation: hover-sign 0.2s;
+}
+
+.content_hover {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid white;
+  position: relative;
+  z-index: 11;
+  pointer-events: none;
+  animation: hover-sign 0.2s;
+}
+
+.nav_hover {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #800032;
+  position: relative;
+  z-index: 11;
+  pointer-events: none;
+  animation: hover-sign 0.2s;
+}
+
+.content_hover_inner::before, .content_hover_inner::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.1s linear;
+}
+.content_hover_inner::before {
+  left: 5%;
+  top: 5%;
+  transform: translateX(-50%);
+}
+.content_hover_inner::after {
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) rotate(-90deg);
+}
+
+.is_transparent::before {
+  background-color: transparent;
+}
+
+@keyframes hover-sign {
+  0% {
+    width: 8px;
+    height: 8px;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

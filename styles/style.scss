@@ -14,21 +14,22 @@
 }
 
 @font-face {
-  font-family: Open Sans;
+  font-family: Open Sans Reg;
   src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: Open Sans SemiBold;
+  src: url("../fonts/Open_Sans/OpenSans-SemiBold.ttf");
 }
 
 $gap-size: 50px;
 $colors: (
         bg-dark: #E7E7E7,
         bg-light: #F1F1F1,
-        text: #203649
+        text: #203649,
+        text-light: #979797
 );
-
-.flex-pattern {
-  display: flex;
-  justify-content: space-between;
-}
 
 @function color($color-name) {
   @return map_get($colors, $color-name);
@@ -36,6 +37,7 @@ $colors: (
 
 * {
   box-sizing: border-box;
+  cursor: none;
 }
 
 html {
@@ -50,11 +52,25 @@ body {
   color: color(text);
 }
 
-.main_container {
-  transition: all 0.2s;
+h2 {
+  font-family: "Gilroy Bold", sans-serif;
+}
+
+h3 {
+  margin: 0;
+  font-family: "Gilroy SemiBold", sans-serif;
+}
+
+p, span, a {
+  font-family: "Open Sans Reg", sans-serif;
 }
 
 // Header
+.flex-pattern {
+  display: flex;
+  justify-content: space-between;
+}
+
 header {
   height: $gap-size * 2;
   width: 100%;
@@ -90,7 +106,7 @@ main {
   grid-row-gap: $gap-size;
   justify-content: space-between;
 
-  & > div {
+  & > * {
     padding: $gap-size;
     background-color: color(bg-light);
 
@@ -147,11 +163,10 @@ main {
   line-height: 1.5;
   font-family: Gilroy SemiBold, sans-serif;
   font-size: 30px;
-  cursor: pointer;
 }
 
 .block_subtitle {
-  font-family: "Open Sans", sans-serif;
+  font-family: Open Sans Reg, sans-serif;
 }
 
 // Pop-up
@@ -172,14 +187,13 @@ main {
 
   .block_descr {
     position: relative;
-    font-family: "Open Sans", sans-serif;
+    font-family: Open Sans Reg, sans-serif;
   }
 }
 
 .popup-close-btn {
   margin-left: 10%;
   float: right;
-  cursor: pointer;
 }
 
 .hr {
@@ -217,7 +231,6 @@ main {
   img {
     height: 30px;
     display: block;
-    cursor: pointer;
   }
 }
 
@@ -229,7 +242,6 @@ main {
 
   img {
     float: left;
-    cursor: pointer;
   }
 }
 
@@ -242,25 +254,24 @@ main {
   float: left;
   margin-left: 5%;
   margin-top: 1%;
-  line-height: 2;
-  font-family: "Open Sans", sans-serif;
+  font-family: Open Sans Reg, sans-serif;
 
   span {
     display: block;
-    cursor: pointer;
     font-size:  14px;
-    font-family: "Open Sans", sans-serif;
+    font-family: Open Sans Reg, sans-serif;
   }
 
   .project_name {
-    font:  18px "Gilroy SemiBold";
+    font-family:  Gilroy SemiBold, sans-serif;
   }
 
   .read_more {
-    margin-top: 20%;
+    margin-top: 40%;
     padding: 3px 0 3px 12px;
     background-color: white;
     border-radius: 20px;
+    font-family: "Open Sans SemiBold", sans-serif;
   }
 }
 
@@ -287,10 +298,9 @@ nav {
     margin: auto;
     padding-bottom: 5px;
     position: relative;
-    font-family: Gilroy Reg, sans-serif;
-    font-size: 18px;
-    color: color(text);
+    color: color(text-light);
     text-decoration: none;
+    font: 18px "Gilroy SemiBold", sans-serif;
   }
 }
 
@@ -314,9 +324,105 @@ $class-slug: nav-item;
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(255,255,255,0.8);
+  background: rgba(216,216,216,0.4);
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
 
+
+// Mouse pointer
+.cursor_outer {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 10;
+  height: 50px;
+  width: 50px;
+  pointer-events: none;
+
+  &::before {
+    content: "";
+    background-color: color(text);
+    width: 8px;
+    height: 8px;
+    margin-top: 45%;
+    margin-left: 45%;
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+
+.links_hover {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: color(text);
+  opacity: 0.4;
+  position: relative;
+  z-index: 11;
+  pointer-events: none;
+  animation: hover-sign 0.2s;
+}
+
+.content_hover {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid white;
+  position: relative;
+  z-index: 11;
+  pointer-events: none;
+  animation: hover-sign 0.2s;
+}
+
+.nav_hover {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #800032;
+  position: relative;
+  z-index: 11;
+  pointer-events: none;
+  animation: hover-sign 0.2s;
+}
+
+.content_hover_inner {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.1s linear;
+  }
+  &::before {
+    left: 5%;
+    top: 5%;
+    transform: translateX(-50%);
+  }
+  &::after {
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) rotate(-90deg);
+  }
+}
+
+.is_transparent {
+  &::before {
+    background-color: transparent;
+  }
+}
+
+@keyframes hover-sign {
+  0% {
+    width: 8px;
+    height: 8px;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+  }
+}
