@@ -3,13 +3,13 @@
 const bodyBlock = document.querySelector('body');
 const mainContainer = document.querySelector('.main_container');
 const gridBlocks = document.querySelectorAll('main > div');
-const overlay = document.querySelector('.overlay');
 const cursorDefault = document.querySelector('.cursor_outer');
 const cursorHover = document.querySelector('.cursor_inner');
 
 document.body.onload = function() {
     popupBlockDescription();
     window.onmousemove = (e) => mouseCoordinates(e);
+    // portfolioSlider();
 };
 
 function popupBlockDescription() {
@@ -19,6 +19,8 @@ function popupBlockDescription() {
             let blockSubtitle = item.querySelector('.block_subtitle');
             let blockDescr = item.querySelector('.block_descr');
 
+            let modalWrapper = document.createElement('div');
+            modalWrapper.setAttribute('class', 'modal');
             let modal = document.createElement('div');
             modal.setAttribute('class', 'pop-up');
 
@@ -51,20 +53,21 @@ function popupBlockDescription() {
                 modal.appendChild(modalDescr);
             }
 
-            bodyBlock.appendChild(modal);
+            modalWrapper.appendChild(modal);
+            bodyBlock.appendChild(modalWrapper);
             bodyBlock.style.overflow = 'hidden';
             mainContainer.classList.add('blurred');
-            overlay.classList.remove('hidden');
         });
     });
 }
 
 function hidePopup() {
+    let modalWrapper = document.querySelector('.modal');
     let modal = document.querySelector('.pop-up');
     modal.classList.add('modal_up');
-    setTimeout(function(){ bodyBlock.removeChild(modal);
+    modalWrapper.classList.add("hidden");
+    setTimeout(function(){ bodyBlock.removeChild(modalWrapper);
         mainContainer.classList.remove('blurred');
-        overlay.classList.add('hidden');
         bodyBlock.style.overflow = 'auto';
     }, 100);
 }
@@ -84,7 +87,7 @@ function mouseCoordinates(e) {
         cursorDefault.classList.add("content_hover_inner");
     } else if (targetElem.classList.contains("cursor_nav_hover")) {
         cursorHover.classList.add("nav_hover");
-        cursorDefault.classList.add("is_transparent");;
+        cursorDefault.classList.add("is_transparent");
     } else {
         if (cursorHover.classList.contains("links_hover")) {
             cursorHover.classList.remove("links_hover");
@@ -96,5 +99,13 @@ function mouseCoordinates(e) {
         }
         cursorDefault.classList.remove("is_transparent");
     }
+}
 
+// Portfolio slider
+var counter = 0;
+const projectList = document.querySelectorAll(".portfolio_items > div");
+const list = Array.from(projectList);
+
+function portfolioSlider() {
+    list.slice()
 }

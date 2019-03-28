@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" media="(max-width:1920px)" href="styles/style_1366.css">
     <link rel="stylesheet" media="(max-width:1366px)" href="styles/style_1280.css">
@@ -47,8 +48,8 @@
             <div class="portfolio_header">
                 <h2 class="block_title cursor_content_hover">What we already did:</h2>
                 <div class="slider_switcher">
-                    <img src="./images/left_arrow.svg" alt="" class="cursor_content_hover">
-                    <img src="./images/right_arrow.svg" alt="" class="cursor_content_hover">
+                    <img src="./images/left_arrow.svg" alt="" class="cursor_content_hover" onclick="portfolioSlider()">
+                    <img src="./images/right_arrow.svg" alt="" class="cursor_content_hover" onclick="portfolioSlider()">
                 </div>
             </div>
             <div class="portfolio_items">
@@ -100,6 +101,22 @@
                         <span class="read_more cursor_content_hover">DETAILS</span>
                     </div>
                 </div>
+                <div class="portfolio-item-5">
+                    <img src="./images/App_icon.svg" alt="" class="cursor_content_hover">
+                    <div class="project_descr">
+                        <h3 class="project_name cursor_content_hover">LOL chat</h3>
+                        <span class="project_details cursor_content_hover">Messenger</span>
+                        <span class="read_more cursor_content_hover">DETAILS</span>
+                    </div>
+                </div>
+                <div class="portfolio-item-6">
+                    <img src="./images/App_icon.svg" alt="" class="cursor_content_hover">
+                    <div class="project_descr">
+                        <h3 class="project_name cursor_content_hover">LOL chat</h3>
+                        <span class="project_details cursor_content_hover">Messenger</span>
+                        <span class="read_more cursor_content_hover">DETAILS</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="fast">
@@ -121,7 +138,7 @@
         </nav>
     </footer>
 </div>
-<div class="overlay hidden"></div>
+<!--<div class="overlay hidden"></div>-->
 <div class="cursor_outer"><div class="cursor_inner"></div></div>
 <script src="./action.js"></script>
 </body>
