@@ -1,15 +1,15 @@
 "use strict";
 
+const htmlBlock = document.querySelector('html');
 const bodyBlock = document.querySelector('body');
 const mainContainer = document.querySelector('.main_container');
-const gridBlocks = document.querySelectorAll('main > div');
+const gridBlocks = document.querySelectorAll('main > div:not(.portfolio)');
 const cursorDefault = document.querySelector('.cursor_outer');
 const cursorHover = document.querySelector('.cursor_inner');
 
 document.body.onload = function() {
     popupBlockDescription();
     window.onmousemove = (e) => mouseCoordinates(e);
-    // portfolioSlider();
 };
 
 function popupBlockDescription() {
@@ -55,7 +55,8 @@ function popupBlockDescription() {
 
             modalWrapper.appendChild(modal);
             bodyBlock.appendChild(modalWrapper);
-            bodyBlock.style.overflow = 'hidden';
+            htmlBlock.style.overflow = 'hidden';
+            bodyBlock.style.overflow = 'scroll';
             mainContainer.classList.add('blurred');
         });
     });
@@ -68,6 +69,7 @@ function hidePopup() {
     modalWrapper.classList.add("hidden");
     setTimeout(function(){ bodyBlock.removeChild(modalWrapper);
         mainContainer.classList.remove('blurred');
+        htmlBlock.style.overflow = 'auto';
         bodyBlock.style.overflow = 'auto';
     }, 100);
 }
@@ -99,13 +101,4 @@ function mouseCoordinates(e) {
         }
         cursorDefault.classList.remove("is_transparent");
     }
-}
-
-// Portfolio slider
-var counter = 0;
-const projectList = document.querySelectorAll(".portfolio_items > div");
-const list = Array.from(projectList);
-
-function portfolioSlider() {
-    list.slice()
 }
