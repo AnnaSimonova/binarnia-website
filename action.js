@@ -26,7 +26,7 @@ function popupBlockDescription() {
 
             let closeIcon = document.createElement('img');
             closeIcon.setAttribute('src', './images/close_icon.svg');
-            closeIcon.setAttribute('class', 'popup-close-btn');
+            closeIcon.setAttribute('class', 'popup-close-btn cursor_links_hover');
             closeIcon.setAttribute('onclick', 'hidePopup()');
             modal.appendChild(closeIcon);
 
