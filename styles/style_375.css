@@ -9,6 +9,12 @@ main {
 .logo_sign {
   display: block;
   margin: auto;
+  height: 44px;
+  width: 12px;
+}
+.logo_sign img {
+  height: 100%;
+  width: 100%;
 }
 
 .block_title {
@@ -36,12 +42,13 @@ main {
 
 .how {
   grid-column: 1;
-  grid-row: 4;
+  grid-row: 5;
 }
 
 .portfolio {
   grid-column: 1;
-  grid-row: 5;
+  grid-row: 4;
+  padding-right: 20px;
 }
 
 .fast {
@@ -60,10 +67,42 @@ main {
 }
 
 nav {
-  margin: 0 50px;
+  width: 317px;
 }
-nav a {
+
+main {
+  padding: 50px 30px;
+  grid-row-gap: 40px;
+  grid-auto-columns: 100%;
+}
+main > * {
+  padding: 30px;
+  padding-bottom: 20px;
+}
+
+.app_icon {
+  height: 44px;
+  width: 44px;
+}
+
+.project_descr {
+  float: left;
+  margin-left: 3%;
+  font-family: Open Sans Reg, sans-serif;
+}
+.project_descr span {
+  display: block;
+  font-size: 14px;
+  font-family: Open Sans Reg, sans-serif;
+}
+.project_descr .project_name {
+  font-family: Gilroy SemiBold, sans-serif;
   font-size: 16px;
+}
+.project_descr .read_more {
+  font-size: 13px;
+  padding: 3px 12px;
+  width: 80px;
 }
 
 /*# sourceMappingURL=style_375.css.map */

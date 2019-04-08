@@ -41,3 +41,7 @@ main {
   grid-column: 2 / span 2;
   grid-row: 4;
 }
+
+.portfolio_items {
+  grid-column-gap: 55px;
+}

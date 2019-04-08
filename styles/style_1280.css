@@ -42,4 +42,8 @@ main {
   grid-row: 4;
 }
 
+.portfolio_items {
+  grid-column-gap: 55px;
+}
+
 /*# sourceMappingURL=style_1280.css.map */

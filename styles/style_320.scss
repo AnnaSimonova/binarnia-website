@@ -1,0 +1,22 @@
+nav {
+  width: 250px;
+}
+
+.main_container {
+  min-width: 250px;
+}
+
+.project_descr {
+  span, .read_more {
+    font-size:  10px;
+  }
+
+  .project_name {
+    font-size: 12px;
+  }
+
+  .read_more {
+    width: 60px;
+    padding: 3px 6px;
+  }
+}

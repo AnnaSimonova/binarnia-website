@@ -3,7 +3,7 @@ main {
 }
 
 .block_title {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .who_we_are {
@@ -21,12 +21,12 @@ main {
   grid-row: 2;
 }
 
-.how {
+.portfolio {
   grid-column: 2;
   grid-row: 2;
 }
 
-.portfolio {
+.how {
   grid-column: 1;
   grid-row: 3;
 }
@@ -44,6 +44,16 @@ main {
 .fixed_price {
   grid-column: 2;
   grid-row: 4;
+}
+
+main > * {
+  padding: 30px;
+  padding-bottom: 20px;
+}
+
+.portfolio {
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 /*# sourceMappingURL=style_768.css.map */

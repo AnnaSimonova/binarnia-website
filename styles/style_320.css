@@ -1,0 +1,20 @@
+nav {
+  width: 250px;
+}
+
+.main_container {
+  min-width: 250px;
+}
+
+.project_descr span, .project_descr .read_more {
+  font-size: 10px;
+}
+.project_descr .project_name {
+  font-size: 12px;
+}
+.project_descr .read_more {
+  width: 60px;
+  padding: 3px 6px;
+}
+
+/*# sourceMappingURL=style_320.css.map */

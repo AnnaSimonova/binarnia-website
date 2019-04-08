@@ -1,0 +1,48 @@
+.blog-slider__item {
+  display: grid;
+  grid-auto-flow: column dense;
+  grid-template-rows: repeat(2, 90px);
+  grid-column-gap: 70px;
+  grid-row-gap: 50px;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > * {
+  opacity: 1;
+  transform: none;
+}
+.blog-slider__content > * {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: transform 1s ease-out, in;
+}
+.blog-slider .swiper-container-horizontal > .swiper-pagination-bullets, .blog-slider .swiper-pagination-custom, .blog-slider .swiper-pagination-fraction {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+.blog-slider__pagination {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  bottom: 20px;
+  transform: rotate(-90deg);
+}
+.blog-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 8px 0;
+}
+.blog-slider__pagination .swiper-pagination-bullet {
+  width: 9px;
+  height: 15px;
+  display: block;
+  border-radius: 10px;
+  background: #B8B8B8;
+  opacity: 0.5;
+  transition: all 0.3s;
+  outline: none;
+}
+.blog-slider__pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #B8B8B8;
+  height: 30px;
+}
+
+/*# sourceMappingURL=portfolio_slider.css.map */
