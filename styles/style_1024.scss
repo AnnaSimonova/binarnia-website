@@ -32,7 +32,7 @@ main {
   grid-row: 3;
 }
 
-.need_mpv {
+.need_mvp {
   grid-column: 1 / span 2;
   grid-row: 4;
 }
@@ -103,4 +103,66 @@ main {
     bottom: 10px;
   }
 }
+
+// Modal windows
+.modal {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  outline: 0;
+  display: none;
+}
+
+.pop-up {
+  width: calc(1024px - (100vw - 100%));
+  top: 0;
+  left: 50%;
+  margin-left: calc(-512px + (100vw - 100%)/2);
+  height: auto;
+  min-height: 100vh;
+}
+
+.modal-body {
+  padding: 50px 30px 100px 30px;
+}
+
+.block-content {
+  padding-right: 12%;
+}
+
+@keyframes modalDown {
+  0%   { top: 10px; opacity: 0; }
+  100% { top: 0; opacity: 1; }
+}
+
+@keyframes modalUp {
+  0%   { top: 0; opacity: 1; }
+  100% { top: 10px; opacity: 0; }
+}
+
+#modal-how-we-work {
+  .cycle {
+    width: 30px;
+
+    img {
+      width: 28px;
+      top: -11px;
+    }
+  }
+}
+
+#modal-need-mvp-or-demo {
+  .modal-body {
+    padding: 50px 0 100px 0;
+  }
+
+  .modal-body-mvp {
+    @extend .modal-body;
+  }
+}
+
 

@@ -5,7 +5,9 @@ const bodyBlock = document.querySelector('body');
 const mainContainer = document.querySelector('.main_container');
 const footer = document.querySelector('footer');
 const gridBlocks = document.querySelectorAll('main > *:not(.portfolio):not(.who_we_are)');
-const modalBlock = document.querySelector('.modal');
+const demoMvpSwitcher = document.querySelectorAll('.switcher span');
+const demoBlock = document.querySelector('.main-body');
+const mvpBlock = document.querySelector('.main-body-mvp');
 const cursorDefault = document.querySelector('.cursor_outer');
 const cursorHover = document.querySelector('.cursor_inner');
 
@@ -19,6 +21,9 @@ document.body.onload = function() {
         if (window.location.hash === item.dataset.hash) {
             popupBlockDescription(item);
         }
+        // else {
+        //     history.pushState("", document.title, window.location.pathname);
+        // }
     });
     gridBlocks.forEach(function(item) {
         item.addEventListener('click', function() {
@@ -33,11 +38,11 @@ document.body.onload = function() {
 function popupBlockDescription(item) {
     let blockTitle = item.querySelector('.block_title').innerHTML;
     let blockSubtitle = item.querySelector('.block_subtitle');
-    let blockDescr = item.querySelector('.block_descr');
 
+    let modalBlockId = item.dataset.hash.substr(1);
+    let modalBlock = document.querySelector('#modal-' + modalBlockId);
     modalBlock.querySelector(".block_title").innerHTML = blockTitle;
     modalBlock.querySelector(".block_subtitle").innerHTML = blockSubtitle ? blockSubtitle.innerHTML : "";
-    modalBlock.querySelector(".block_descr").innerHTML = blockDescr ? blockDescr.innerHTML : "";
 
     modalBlock.style.display = "block";
     htmlBlock.style.overflowY = 'hidden';
@@ -47,11 +52,13 @@ function popupBlockDescription(item) {
     footer.classList.add('blurred');
 }
 
-function hidePopup() {
+function hidePopup(modalId) {
     history.pushState("", document.title, window.location.pathname);
-    modalBlock.classList.add('modal_up');
+    let modal = document.getElementById(modalId);
+    let modalPopup = modal.querySelector('.pop-up');
+    modalPopup.classList.add('modal_up');
     setTimeout(function() {
-        modalBlock.style.display = "none";
+        modal.style.display = "none";
         mainContainer.classList.remove('blurred');
         footer.classList.remove('blurred');
         htmlBlock.style.overflowY = 'auto';
@@ -59,16 +66,37 @@ function hidePopup() {
         bodyBlock.style.overflowY = 'visible';
     }, 100);
     setTimeout(function() {
-        modalBlock.classList.remove('modal_up');
+        modalPopup.classList.remove('modal_up');
     }, 200);
 }
 
+function demoMvpSwitch(e) {
+    let switchTarget = e.target;
+    if (!switchTarget.classList.contains('active')) {
+        demoBlock.classList.toggle('hidden');
+        mvpBlock.classList.toggle('hidden');
+        switchTarget.classList.add('active');
+        switchTarget.classList.remove('transparent');
+        demoMvpSwitcher.forEach(function(item) {
+            if (item !== switchTarget) {
+                item.classList.remove('active');
+                item.classList.add('transparent');
+            }
+        });
+    }
+}
 
 // Mouse pointer
 function mouseCoordinates(e) {
     let targetElem = event.target;
     cursorDefault.style.left = (e.pageX - 25) + 'px';
     cursorDefault.style.top = (e.pageY - 25) + 'px';
+
+    if (document.documentElement.clientWidth - e.pageX < 26) {
+        cursorDefault.style.width = 25 + 'px';
+    } else {
+        cursorDefault.style.width = '';
+    }
 
     if (targetElem.classList.contains("cursor_links_hover") ||
         (targetElem.classList.contains("swiper-pagination-bullet") && !targetElem.classList.contains("swiper-pagination-bullet-active"))) {
@@ -97,7 +125,6 @@ var swiper = new Swiper('.blog-slider', {
     mousewheel: {
         invert: false,
     },
-    // autoHeight: true,
     pagination: {
         el: '.blog-slider__pagination',
         clickable: true,

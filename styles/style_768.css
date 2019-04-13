@@ -36,7 +36,7 @@ main {
   grid-row: 3;
 }
 
-.need_mpv {
+.need_mvp {
   grid-column: 1;
   grid-row: 4;
 }
@@ -54,6 +54,356 @@ main > * {
 .portfolio {
   padding-top: 20px;
   padding-bottom: 30px;
+}
+
+.modal {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  outline: 0;
+  display: none;
+}
+
+.pop-up {
+  width: 100%;
+  left: 0;
+  margin-left: 0;
+  border-radius: 0;
+}
+.pop-up .modal-header {
+  border-radius: 0;
+  padding: 35px 35px 30px 25px;
+}
+
+.modal-body {
+  position: relative;
+  padding: 50px 30px 100px 30px;
+}
+
+.icon-wrapper {
+  width: 65px;
+  padding-right: 15px;
+}
+
+.block-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.modal-body-block, .block-content, .block-content > *, hr {
+  position: relative;
+}
+
+.modal-body-block:not(:first-child) {
+  margin-top: 30px;
+}
+
+.block-content {
+  padding-right: 0;
+  left: -70px;
+}
+
+.block-title {
+  top: 13px;
+  left: 70px;
+  font-size: 20px;
+}
+
+.block-descr {
+  top: 20px;
+}
+
+.block-tags {
+  top: 25px;
+}
+.block-tags span {
+  padding: 3px;
+  background-color: transparent;
+  background-image: url("../images/modals/tags-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 44px 23px;
+}
+
+hr {
+  margin-left: 0;
+  top: 10px;
+}
+
+#modal-what-we-cannot .modal-body {
+  padding: 50px 25px 100px 25px;
+}
+#modal-what-we-cannot .block-content {
+  left: 0;
+}
+#modal-what-we-cannot .block-content .block-title {
+  left: 0;
+  top: 0;
+  margin-bottom: 0;
+}
+#modal-what-we-cannot .block-content .block-descr {
+  bottom: 0;
+  top: 0;
+  margin-top: 5px;
+}
+
+#modal-how-we-work .modal-body {
+  padding: 50px 25px 100px 25px;
+}
+#modal-how-we-work .numeration {
+  font-size: 40px;
+}
+#modal-how-we-work .block-title {
+  font-size: 26px;
+}
+#modal-how-we-work .block-content {
+  flex-direction: column;
+  left: 0;
+}
+#modal-how-we-work .block-content .term {
+  color: #B6B6B6;
+  background: #858585;
+  width: 180px;
+  height: 30px;
+  border-radius: 0;
+}
+#modal-how-we-work .block-content .term::before {
+  bottom: 2px;
+  left: 2px;
+}
+#modal-how-we-work .block-content .timing-name {
+  border-radius: 2px;
+  margin-left: 10px;
+}
+#modal-how-we-work .block-content .timing, #modal-how-we-work .block-content #modal-need-mvp-or-demo .ui-development, #modal-how-we-work .block-content #modal-need-mvp-or-demo .ui-testing, #modal-how-we-work .block-content #modal-need-mvp-or-demo .testing, #modal-need-mvp-or-demo #modal-how-we-work .block-content .ui-development, #modal-need-mvp-or-demo #modal-how-we-work .block-content .ui-testing, #modal-need-mvp-or-demo #modal-how-we-work .block-content .testing, #modal-how-we-work .block-content .post-project-timing, #modal-how-we-work .block-content .development, #modal-how-we-work .block-content .design {
+  width: 180px;
+  height: 61px;
+  border-radius: 0 0 4px 4px;
+}
+#modal-how-we-work .block-content .design {
+  width: 100%;
+  max-width: 349px;
+}
+#modal-how-we-work .block-content .design .timing-name, #modal-how-we-work .block-content .design .term {
+  width: 100%;
+  text-align: start;
+}
+#modal-how-we-work .block-content .development {
+  width: calc(100% - 10px);
+  max-width: 708px;
+}
+#modal-how-we-work .block-content .development .timing-name {
+  width: calc(100% - 10px);
+  text-align: start;
+}
+#modal-how-we-work .block-content .development .term {
+  width: 100%;
+}
+#modal-how-we-work .block-content .post-project-timing {
+  height: 36px;
+  width: 100%;
+}
+#modal-how-we-work .block-content .post-project-timing .timing-name {
+  text-align: start;
+}
+#modal-how-we-work .block-content .descr-wrapper {
+  margin-left: 0;
+  margin-top: 20px;
+}
+#modal-how-we-work .post-project {
+  display: flex;
+  flex-grow: 1;
+  gap: 32px;
+}
+#modal-how-we-work .post-project .modal-body-block {
+  margin-top: 0;
+}
+#modal-how-we-work .post-project .modal-body-block .timing-name::before {
+  content: url("../images/modals/clock.png");
+  position: absolute;
+  left: -30px;
+  bottom: -6px;
+}
+#modal-how-we-work .post-project .modal-body-block:last-child .timing-name::before {
+  content: url("../images/modals/cycle.png");
+  position: absolute;
+  left: -30px;
+  bottom: -6px;
+}
+#modal-how-we-work .post-project .modal-body-block:not(:last-child) {
+  padding-right: 32px;
+}
+#modal-how-we-work .post-project .block-descr {
+  margin-top: 0;
+}
+#modal-how-we-work .post-project .block-subtitle {
+  display: none;
+}
+#modal-how-we-work .post-project .clock::before, #modal-how-we-work .post-project .circle::before {
+  left: -30px;
+  bottom: -6px;
+}
+#modal-how-we-work .post-project .timing-name {
+  position: relative;
+  left: 20px;
+}
+#modal-how-we-work .cycle {
+  display: none;
+}
+
+#modal-need-mvp-or-demo .proto-body {
+  padding: 50px;
+}
+#modal-need-mvp-or-demo .proto-body-inner {
+  flex-direction: column;
+}
+#modal-need-mvp-or-demo .body-inner-left {
+  width: 100%;
+}
+#modal-need-mvp-or-demo .body-inner-right {
+  width: 100%;
+}
+#modal-need-mvp-or-demo hr {
+  margin-bottom: 24.5px;
+}
+#modal-need-mvp-or-demo .hr-2 {
+  width: calc(100% - 100px);
+}
+#modal-need-mvp-or-demo .block-tags span {
+  background-image: none;
+  margin-bottom: 15px;
+  padding: 4px 14px;
+  background-color: #C8C8C8;
+  border-radius: 12px;
+  color: #565656;
+}
+#modal-need-mvp-or-demo .proto-name {
+  padding-top: 50px;
+  padding-left: 25px;
+}
+#modal-need-mvp-or-demo .proto-body {
+  padding: 0;
+}
+#modal-need-mvp-or-demo .body-inner-right {
+  background-color: #585858;
+  padding-bottom: 50px;
+}
+#modal-need-mvp-or-demo .body-inner-right > * {
+  margin: 50px;
+}
+#modal-need-mvp-or-demo .body-inner-left {
+  padding: 0 50px 50px 50px;
+}
+#modal-need-mvp-or-demo .timing-part {
+  margin-bottom: 30px;
+  flex-direction: column;
+}
+#modal-need-mvp-or-demo .term {
+  color: #B6B6B6;
+  background: #585858;
+  width: 180px;
+  height: 30px;
+  border-radius: 0;
+}
+#modal-need-mvp-or-demo .term::before {
+  bottom: 2px;
+  left: 2px;
+}
+#modal-need-mvp-or-demo .timing-name {
+  border-radius: 2px;
+  margin-left: 10px;
+}
+#modal-need-mvp-or-demo .timing, #modal-need-mvp-or-demo .ui-development, #modal-need-mvp-or-demo .ui-testing, #modal-need-mvp-or-demo .testing, #modal-need-mvp-or-demo .development, #modal-need-mvp-or-demo #modal-how-we-work .block-content .design, #modal-how-we-work .block-content #modal-need-mvp-or-demo .design, #modal-need-mvp-or-demo #modal-how-we-work .block-content .development, #modal-how-we-work .block-content #modal-need-mvp-or-demo .development, #modal-need-mvp-or-demo #modal-how-we-work .block-content .post-project-timing, #modal-how-we-work .block-content #modal-need-mvp-or-demo .post-project-timing {
+  width: 50%;
+  height: 61px;
+  border-radius: 0 0 4px 4px;
+  border: #585858;
+}
+#modal-need-mvp-or-demo .timing .term, #modal-need-mvp-or-demo .ui-development .term, #modal-need-mvp-or-demo .ui-testing .term, #modal-need-mvp-or-demo .testing .term, #modal-need-mvp-or-demo .development .term, #modal-need-mvp-or-demo #modal-how-we-work .block-content .design .term, #modal-how-we-work .block-content #modal-need-mvp-or-demo .design .term, #modal-need-mvp-or-demo #modal-how-we-work .block-content .post-project-timing .term, #modal-how-we-work .block-content #modal-need-mvp-or-demo .post-project-timing .term {
+  width: 100%;
+  border: #585858;
+}
+#modal-need-mvp-or-demo .ui-development, #modal-need-mvp-or-demo .ui-testing, #modal-need-mvp-or-demo .testing, #modal-need-mvp-or-demo .development {
+  height: 60px !important;
+  width: calc(100% - 10px);
+}
+#modal-need-mvp-or-demo .ui-development .timing-name, #modal-need-mvp-or-demo .ui-testing .timing-name, #modal-need-mvp-or-demo .testing .timing-name, #modal-need-mvp-or-demo .development .timing-name {
+  width: calc(100% - 10px);
+  height: 36px;
+  text-align: start;
+  padding-top: 8px;
+}
+#modal-need-mvp-or-demo .testing {
+  width: 33%;
+}
+#modal-need-mvp-or-demo .ui-testing {
+  width: 28%;
+}
+#modal-need-mvp-or-demo .ui-testing .term {
+  width: 130%;
+}
+#modal-need-mvp-or-demo .proto-with-ui {
+  margin: 0;
+}
+#modal-need-mvp-or-demo .modal-body {
+  padding-bottom: 0;
+}
+#modal-need-mvp-or-demo .notes {
+  margin: 0;
+  margin-right: 50px;
+  float: right;
+}
+#modal-need-mvp-or-demo .notes span {
+  margin-right: 35px;
+}
+#modal-need-mvp-or-demo .case-study-title {
+  margin-bottom: 20px;
+}
+#modal-need-mvp-or-demo .case-study {
+  margin-top: 20px;
+}
+
+#modal-for-fixed-price .modal-body {
+  padding-bottom: 0;
+}
+#modal-for-fixed-price .block-content {
+  left: 0;
+  text-align: center;
+  top: -45px;
+}
+#modal-for-fixed-price .descr_wrapper {
+  text-align: center;
+}
+#modal-for-fixed-price .block-descr {
+  margin-right: 0;
+}
+#modal-for-fixed-price .cases {
+  flex-direction: column;
+  position: relative;
+}
+#modal-for-fixed-price .case-block {
+  width: 100%;
+}
+#modal-for-fixed-price .pic {
+  height: 204px;
+}
+#modal-for-fixed-price .case-study {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -70px;
+}
+#modal-for-fixed-price .case-study .project_name {
+  margin-bottom: 5px;
+}
+#modal-for-fixed-price .read_more {
+  margin-bottom: 40px;
+  position: relative;
+  top: -35px;
 }
 
 /*# sourceMappingURL=style_768.css.map */

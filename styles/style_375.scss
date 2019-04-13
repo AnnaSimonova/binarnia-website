@@ -57,7 +57,7 @@ main {
   grid-row: 6;
 }
 
-.need_mpv {
+.need_mvp {
   grid-column: 1;
   grid-row: 7;
 }
@@ -107,5 +107,162 @@ main {
     font-size: 13px;
     padding: 3px 12px;
     width: 80px;
+  }
+}
+
+//Modal windows
+.modal-header {
+  padding: 30px 30px 25px 25px;
+}
+
+.modal-body {
+  padding: 50px 25px 100px 25px;
+}
+
+.block-content {
+  width: 100%;
+  padding-right: 0;
+  left: 0;
+}
+
+.modal-body-block {
+  flex-direction: column;
+}
+
+.block-icon {
+  width: 50px;
+}
+
+.block-title {
+  width: calc(100% - 65px);
+  top: -40px;
+  left: 65px;
+  font-size: 18px;
+}
+
+.block-descr {
+  top: -15px;
+}
+
+.block-tags {
+  padding-left: 5%;
+  top: -25px;
+
+  span {
+    margin-top: 10px;
+  }
+}
+
+button {
+  width: 100%;
+  flex-basis: 40px;
+}
+
+.modal-header {
+  .header-content {
+    .block_title {
+      font-size: 26px;
+    }
+  }
+}
+
+#modal-what-we-cannot {
+  .block-content {
+    .block-title {
+      font-size: 20px;
+    }
+  }
+}
+
+#modal-how-we-work {
+  .post-project {
+    flex-direction: column;
+
+    .post-project-timing {
+      width: 100%;
+
+      .timing-name {
+        width: calc(100% - 20px);
+      }
+    }
+
+    .modal-body-block:not(:last-child) {
+      padding: 0;
+    }
+  }
+
+  .modal-body-blocks {
+    width: 100%;
+  }
+}
+
+#modal-need-mvp-or-demo {
+  .body-inner-right, .body-inner-left {
+    padding: 25px;
+  }
+
+  .body-inner-right > * {
+    margin: 0;
+  }
+
+  .block-tags {
+    padding-left: 0;
+
+    span {
+      padding: 3px;
+      background-color: transparent;
+      background-image: url("../images/modals/tags-bg.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 44px 23px;
+    }
+  }
+
+  .hr-2 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .case-study-title {
+    margin-bottom: 20px;
+  }
+
+  .timing {
+    .term {
+      width: 200%;
+    }
+  }
+
+  .development, .ui-development {
+    .term {
+      width: 100%;
+    }
+  }
+
+  .notes {
+    span {
+      margin-right: 20px;
+      left: 0;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  .project_name {
+    font-size: 16px;
+  }
+}
+
+#modal-for-fixed-price {
+  .modal-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .block-title, .block-descr, .block-content {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }

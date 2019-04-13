@@ -56,7 +56,7 @@ main {
   grid-row: 6;
 }
 
-.need_mpv {
+.need_mvp {
   grid-column: 1;
   grid-row: 7;
 }
@@ -103,6 +103,126 @@ main > * {
   font-size: 13px;
   padding: 3px 12px;
   width: 80px;
+}
+
+.modal-header {
+  padding: 30px 30px 25px 25px;
+}
+
+.modal-body {
+  padding: 50px 25px 100px 25px;
+}
+
+.block-content {
+  width: 100%;
+  padding-right: 0;
+  left: 0;
+}
+
+.modal-body-block {
+  flex-direction: column;
+}
+
+.block-icon {
+  width: 50px;
+}
+
+.block-title {
+  width: calc(100% - 65px);
+  top: -40px;
+  left: 65px;
+  font-size: 18px;
+}
+
+.block-descr {
+  top: -15px;
+}
+
+.block-tags {
+  padding-left: 5%;
+  top: -25px;
+}
+.block-tags span {
+  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  flex-basis: 40px;
+}
+
+.modal-header .header-content .block_title {
+  font-size: 26px;
+}
+
+#modal-what-we-cannot .block-content .block-title {
+  font-size: 20px;
+}
+
+#modal-how-we-work .post-project {
+  flex-direction: column;
+}
+#modal-how-we-work .post-project .post-project-timing {
+  width: 100%;
+}
+#modal-how-we-work .post-project .post-project-timing .timing-name {
+  width: calc(100% - 20px);
+}
+#modal-how-we-work .post-project .modal-body-block:not(:last-child) {
+  padding: 0;
+}
+#modal-how-we-work .modal-body-blocks {
+  width: 100%;
+}
+
+#modal-need-mvp-or-demo .body-inner-right, #modal-need-mvp-or-demo .body-inner-left {
+  padding: 25px;
+}
+#modal-need-mvp-or-demo .body-inner-right > * {
+  margin: 0;
+}
+#modal-need-mvp-or-demo .block-tags {
+  padding-left: 0;
+}
+#modal-need-mvp-or-demo .block-tags span {
+  padding: 3px;
+  background-color: transparent;
+  background-image: url("../images/modals/tags-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 44px 23px;
+}
+#modal-need-mvp-or-demo .hr-2 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#modal-need-mvp-or-demo .case-study-title {
+  margin-bottom: 20px;
+}
+#modal-need-mvp-or-demo .timing .term {
+  width: 200%;
+}
+#modal-need-mvp-or-demo .development .term, #modal-need-mvp-or-demo .ui-development .term {
+  width: 100%;
+}
+#modal-need-mvp-or-demo .notes span {
+  margin-right: 20px;
+  left: 0;
+}
+#modal-need-mvp-or-demo .notes span::before {
+  content: none;
+}
+#modal-need-mvp-or-demo .project_name {
+  font-size: 16px;
+}
+
+#modal-for-fixed-price .modal-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+#modal-for-fixed-price .block-title, #modal-for-fixed-price .block-descr, #modal-for-fixed-price .block-content {
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 /*# sourceMappingURL=style_375.css.map */

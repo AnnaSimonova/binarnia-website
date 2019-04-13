@@ -36,7 +36,7 @@ main {
   grid-row: 3;
 }
 
-.need_mpv {
+.need_mvp {
   grid-column: 1;
   grid-row: 4;
 }
@@ -56,4 +56,440 @@ main {
 .portfolio {
   padding-top: 20px;
   padding-bottom: 30px;
+}
+
+// Modal windows
+.modal {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  outline: 0;
+  display: none;
+}
+
+.pop-up {
+  width: 100%;
+  left: 0;
+  margin-left: 0;
+  border-radius: 0;
+
+  .modal-header {
+    border-radius: 0;
+    padding: 35px 35px 30px 25px;
+  }
+}
+
+.modal-body {
+  position: relative;
+  padding: 50px 30px 100px 30px;
+}
+
+.icon-wrapper {
+  width: 65px;
+  padding-right: 15px;
+}
+
+.block-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.modal-body-block, .block-content, .block-content > *, hr {
+  position: relative;
+}
+
+.modal-body-block:not(:first-child) {
+  margin-top: 30px;
+}
+
+.block-content {
+  padding-right: 0;
+  left: -70px;
+}
+
+.block-title {
+  top: 13px;
+  left: 70px;
+  font-size: 20px;
+}
+
+.block-descr {
+  top: 20px;
+}
+
+.block-tags {
+  top: 25px;
+
+  span {
+    padding: 3px;
+    background-color: transparent;
+    background-image: url("../images/modals/tags-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 44px 23px;
+  }
+}
+
+hr {
+  margin-left: 0;
+  top: 10px;
+}
+
+#modal-what-we-cannot {
+  .modal-body {
+    padding: 50px 25px 100px 25px;
+  }
+
+  .block-content {
+    left: 0;
+
+    .block-title {
+      left: 0;
+      top: 0;
+      margin-bottom: 0;
+    }
+
+    .block-descr {
+      bottom: 0;
+      top: 0;
+      margin-top: 5px;
+    }
+  }
+}
+
+#modal-how-we-work {
+  .modal-body {
+    padding: 50px 25px 100px 25px;
+  }
+
+  .numeration {
+    font-size: 40px;
+  }
+
+  .block-title {
+    font-size: 26px;
+  }
+
+  .block-content {
+    flex-direction: column;
+    left: 0;
+
+    .term {
+      color: #B6B6B6;
+      background: #858585;
+      width: 180px;
+      height: 30px;
+      border-radius: 0;
+
+      &::before {
+        bottom: 2px;
+        left: 2px;
+      }
+    }
+
+    .timing-name {
+      border-radius: 2px;
+      margin-left: 10px;
+    }
+
+    .timing {
+      width: 180px;
+      height: 61px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .design {
+      @extend .timing;
+      width: 100%;
+      max-width: 349px;
+
+      .timing-name, .term {
+        width: 100%;
+        text-align: start;
+      }
+    }
+
+    .development {
+      @extend .timing;
+      width: calc(100% - 10px);
+      max-width: 708px;
+
+      .timing-name {
+        width: calc(100% - 10px);
+        text-align: start;
+      }
+
+      .term {
+        width: 100%;
+      }
+    }
+
+    .post-project-timing {
+      @extend .timing;
+      height: 36px;
+      width: 100%;
+
+      .timing-name {
+        text-align: start;
+      }
+    }
+
+    .descr-wrapper {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+
+  .post-project {
+    display: flex;
+    flex-grow: 1;
+    gap: 32px;
+
+    .modal-body-block {
+      margin-top: 0;
+
+      .timing-name::before {
+        content: url("../images/modals/clock.png");
+        position: absolute;
+        left: -30px;
+        bottom: -6px;
+      }
+
+      &:last-child {
+        .timing-name::before {
+          content: url("../images/modals/cycle.png");
+          position: absolute;
+          left: -30px;
+          bottom: -6px;
+        }
+      }
+
+      &:not(:last-child) {
+        padding-right: 32px;
+      }
+    }
+
+    .block-descr {
+      margin-top: 0;
+    }
+
+    .block-subtitle {
+      display: none;
+    }
+
+    .clock::before, .circle::before {
+      left: -30px;
+      bottom: -6px;
+    }
+
+    .timing-name {
+      position: relative;
+      left: 20px;
+    }
+  }
+
+  .cycle {
+    display: none;
+  }
+}
+
+#modal-need-mvp-or-demo {
+  .proto-body {
+    padding: 50px;
+  }
+  .proto-body-inner {
+    flex-direction: column;
+  }
+
+  .body-inner-left {
+    width: 100%;
+  }
+
+  .body-inner-right {
+    width: 100%;
+  }
+
+  hr {
+    margin-bottom: 24.5px;
+  }
+
+  .hr-2 {
+    width: calc(100% - 100px);
+  }
+
+  .block-tags span {
+    background-image: none;
+    margin-bottom: 15px;
+    padding: 4px 14px;
+    background-color: #C8C8C8;
+    border-radius: 12px;
+    color: #565656;
+  }
+  .proto-name {
+    padding-top: 50px;
+    padding-left: 25px;
+  }
+
+  .proto-body {
+    padding: 0;
+  }
+
+  .body-inner-right {
+    background-color: #585858;
+    padding-bottom: 50px;
+
+    & > * {
+      margin: 50px;
+    }
+  }
+
+  .body-inner-left {
+    padding: 0 50px 50px 50px;
+  }
+
+  .timing-part {
+    margin-bottom: 30px;
+    flex-direction: column;
+  }
+
+  .term {
+    color: #B6B6B6;
+    background: #585858;
+    width: 180px;
+    height: 30px;
+    border-radius: 0;
+
+    &::before {
+      bottom: 2px;
+      left: 2px;
+    }
+  }
+
+  .timing-name {
+    border-radius: 2px;
+    margin-left: 10px;
+  }
+
+  .timing {
+    width: 50%;
+    height: 61px;
+    border-radius: 0 0 4px 4px;
+    border: #585858;
+
+    .term {
+      width: 100%;
+      border: #585858;
+    }
+  }
+
+  .ui-development {
+    @extend .timing;
+    height: 60px!important;
+    width: calc(100% - 10px);
+
+    .timing-name {
+      width: calc(100% - 10px);
+      height: 36px;
+      text-align: start;
+      padding-top: 8px;
+    }
+  }
+
+  .development {
+    @extend .ui-development;
+  }
+
+  .testing {
+    @extend .ui-development;
+    width: 33%;
+  }
+
+  .ui-testing {
+    @extend .ui-development;
+    width: 28%;
+
+    .term {
+      width: 130%;
+    }
+  }
+
+  .proto-with-ui {
+    margin: 0;
+  }
+
+  .modal-body {
+    padding-bottom: 0;
+  }
+
+  .notes {
+    margin: 0;
+    margin-right: 50px;
+    float: right;
+
+    span {
+      margin-right: 35px;
+    }
+  }
+
+  .case-study-title {
+    margin-bottom: 20px;
+  }
+
+  .case-study {
+    margin-top: 20px;
+  }
+}
+
+#modal-for-fixed-price {
+  .modal-body {
+    padding-bottom: 0;
+  }
+
+  .block-content {
+    left: 0;
+    text-align: center;
+    top: -45px;
+  }
+
+  .descr_wrapper {
+    text-align: center;
+  }
+
+  .block-descr {
+    margin-right: 0;
+  }
+
+  .cases {
+    flex-direction: column;
+    position: relative;
+  }
+
+  .case-block {
+    width: 100%;
+  }
+
+  .pic {
+    height: 204px;
+  }
+
+  .case-study {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: -70px;
+
+    .project_name {
+      margin-bottom: 5px;
+    }
+  }
+
+  .read_more {
+    margin-bottom: 40px;
+    position: relative;
+    top: -35px;
+  }
 }
